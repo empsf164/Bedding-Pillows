@@ -26,6 +26,75 @@
 }
 
 /* --------------------------------------------------------------------------
+   Tablet & 1024px Viewports (576px - 1024.98px)
+   2 Cards per row across all sections & Last odd-numbered card centered
+   -------------------------------------------------------------------------- */
+@media (min-width: 576px) and (max-width: 1024.98px) {
+  /* Center flex rows containing card grids */
+  .row {
+    justify-content: center !important;
+  }
+
+  /* Force 2 cards per row (50% width) for all grid columns in sections */
+  .row > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+
+  /* Exclude 100% full-width utility and form rows where full width is intended */
+  .row > .col-12,
+  .row > .col-lg-12,
+  .row > .col-md-12,
+  .cart-drawer .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Split columns in content blocks */
+  .section-spacing .row.align-items-center > [class*="col-lg-"],
+  .checkout-section .row > [class*="col-lg-"],
+  .nestora-footer .row > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+
+  .nestora-footer .row > .col-lg-4:first-child {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Center the last odd-numbered card in any row */
+  .row > [class*="col-"]:last-child:nth-child(odd) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* CSS Grid Option Cards (e.g. Pillow Finder quiz) */
+  .finder-options-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    justify-items: center;
+  }
+
+  .finder-options-grid > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    max-width: 380px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Product catalog sidebar layout adjustment on tablet */
+  .shop-layout-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Tablet & Mobile Navigation Breakpoint (< 992px)
    -------------------------------------------------------------------------- */
 @media (max-width: 991.98px) {
@@ -111,6 +180,44 @@
 }
 
 /* --------------------------------------------------------------------------
+   Mobile Viewports (< 576px)
+   1 Card per row across all sections
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  /* Force 1 card per row (100% width) for all grid columns in sections */
+  .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Quiz and Finder options grid 1 card per row */
+  .finder-options-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .finder-options-grid > * {
+    grid-column: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Force all cards to 100% container width */
+  .product-card,
+  .card,
+  .category-card,
+  .material-card,
+  .review-card,
+  .journal-card,
+  .curated-card,
+  .feature-card,
+  .step-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Small Mobile Devices (< 480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 479.98px) {
@@ -120,7 +227,12 @@
   }
 
   .finder-options-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .finder-options-grid > *:last-child:nth-child(odd) {
+    grid-column: auto !important;
+    max-width: 100% !important;
   }
 
   .product-card-body {

@@ -39,7 +39,7 @@
           size: 'Queen',
           color: 'Crisp White',
           quantity: 1,
-          image: 'https://images.unsplash.com/photo-1629949009765-40fc74c95018?auto=format&fit=crop&w=1000&q=80'
+          image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80'
         }
       ]
     }

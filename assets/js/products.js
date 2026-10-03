@@ -60,8 +60,8 @@ const NESTORA_PRODUCTS = [
     description: "Engineered with open-cell natural Talalay latex core and micro-ventilated channels that continuously circulate air. The removable Tencel™ cover features Japanese phase-change cooling yarn for refreshing coolness all night long.",
     images: [
       "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1629949009765-40fc74c95018?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1592789705501-f9be4292d911?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Crisp White", code: "#FFFFFF" },
@@ -231,7 +231,7 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Shoulder contour cut-out aligns spine and relieves neck pressure for side sleepers.",
     description: "Specifically contoured to cradle the head and accommodate the shoulder slope. Features responsive memory foam infused with soothing herbal bamboo charcoal for natural odor resistance.",
     images: [
-      "https://images.unsplash.com/photo-1629949009765-40fc74c95018?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
       "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
@@ -300,7 +300,7 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Gentle on hair and delicate facial skin. Reduces morning bedhead and friction lines.",
     description: "A decadent blend of 6A grade Mulberry silk and Eucalyptus Tencel™. Features an invisible French envelope closure and delicate French seam detailing.",
     images: [
-      "https://images.unsplash.com/photo-1592789705501-f9be4292d911?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
       "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
@@ -403,8 +403,8 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Add or remove micro-fill to dial in your exact height and support level.",
     description: "No more guessing your pillow height. Unzip the inner casing and adjust the silken micro-gel clusters until your head, neck, and spine rest in effortless ergonomic harmony.",
     images: [
-      "https://images.unsplash.com/photo-1592789705501-f9be4292d911?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1629949009765-40fc74c95018?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Snow White", code: "#FFFFFF" }

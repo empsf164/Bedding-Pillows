@@ -6,6 +6,9 @@
   <title>Interactive Pillow Finder & Sleep Guide — NESTORA</title>
   <meta name="description" content="Discover your ideal pillow in 60 seconds with the NESTORA interactive Pillow Finder. Match your sleeping position and thermal preference to custom comfort.">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231C1A18'/><path d='M30 68V32h9l18 24V32h9v36h-9L39 44v24z' fill='%23FDFBF7'/><circle cx='74' cy='66' r='4' fill='%235E6D5B'/></svg>">
+
   <!-- Bootstrap 5 CSS & Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -17,11 +20,6 @@
 </head>
 <body>
 
-  <!-- Announcement Bar -->
-  <div class="nestora-announcement">
-    <span>Enjoy <strong>Complimentary Insured Shipping</strong> on orders over $150 · 100-Night In-Home Sleep Trial</span>
-  </div>
-
   <!-- Mandatory Navbar -->
   <header class="nestora-header">
     <div class="nestora-container">
@@ -32,57 +30,82 @@
 
         <ul class="nav-desktop">
           <li><a href="index.html" class="nav-desktop-link">Home</a></li>
-          <li><a href="category.html?cat=bedding" class="nav-desktop-link">Bedding</a></li>
-          <li><a href="category.html?cat=pillows" class="nav-desktop-link">Pillows</a></li>
+          <li><a href="shop.html" class="nav-desktop-link">Shop</a></li>
           <li><a href="collections.html" class="nav-desktop-link">Collections</a></li>
-          <li><a href="shop.html" class="nav-desktop-link">Shop All</a></li>
-          <li><a href="pillow-finder.html" class="nav-desktop-link active"><i class="bi bi-stars text-sage me-1"></i> Sleep Guide</a></li>
+          <li><a href="pillow-finder.html" class="nav-desktop-link active">Sleep Guide</a></li>
           <li><a href="about.html" class="nav-desktop-link">About</a></li>
+          <li><a href="contact.html" class="nav-desktop-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button type="button" class="nav-action-btn btn-search-trigger" aria-label="Search"><i class="bi bi-search"></i></button>
-          <button type="button" class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme"><i class="bi bi-moon-stars"></i></button>
+          <!-- Desktop Action Buttons (Hidden on mobile & tablet) -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <!-- Wishlist Button -->
+            <a href="account.html#saved" class="nav-action-btn" aria-label="Wishlist" title="Saved Items">
+              <i class="bi bi-heart"></i>
+              <span class="action-badge wishlist-badge-count" style="display: none;">0</span>
+            </a>
 
-          <div class="account-dropdown">
-            <button type="button" class="nav-action-btn" aria-label="Account"><i class="bi bi-person"></i></button>
-            <div class="account-menu">
-              <div class="auth-logged-out">
-                <a href="login.html"><i class="bi bi-box-arrow-in-right"></i> Sign In</a>
-                <a href="signup.html"><i class="bi bi-person-plus"></i> Create Account</a>
-              </div>
-              <div class="auth-logged-in" style="display: none;">
-                <a href="account.html"><i class="bi bi-person-circle"></i> My Account</a>
-                <a href="orders.html"><i class="bi bi-bag-check"></i> My Orders</a>
-                <a href="#" class="btn-nestora-logout text-danger"><i class="bi bi-box-arrow-right text-danger"></i> Sign Out</a>
-              </div>
-            </div>
+            <!-- Cart Drawer Trigger -->
+            <button type="button" class="nav-action-btn btn-cart-drawer-toggle" aria-label="Shopping Cart" title="Bedding Bag">
+              <i class="bi bi-bag"></i>
+              <span class="action-badge cart-badge-count" style="display: none;">0</span>
+            </button>
+
+            <!-- Sign Up Button -->
+            <a href="signup.html" class="btn-nestora btn-nestora-primary btn-nestora-sm ms-2">
+              Sign Up
+            </a>
           </div>
 
-          <a href="account.html#saved" class="nav-action-btn" aria-label="Wishlist">
-            <i class="bi bi-heart"></i>
-            <span class="action-badge wishlist-badge-count" style="display: none;">0</span>
-          </a>
-
-          <button type="button" class="nav-action-btn btn-cart-drawer-toggle" aria-label="Shopping Cart">
-            <i class="bi bi-bag"></i>
-            <span class="action-badge cart-badge-count" style="display: none;">0</span>
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="nav-action-btn mobile-nav-toggle d-lg-none" aria-label="Toggle Navigation Menu">
+            <i class="bi bi-list fs-4"></i>
           </button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Menu Drawer (Menu Page) -->
+  <div class="mobile-menu-drawer">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="brand-logo fs-4">NESTORA<span class="brand-dot"></span></a>
+        <button type="button" class="btn-close btn-close-mobile-menu" aria-label="Close menu"></button>
+      </div>
+      <div class="mobile-menu-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop</a></li>
+          <li class="mobile-nav-item"><a href="collections.html" class="mobile-nav-link">Collections</a></li>
+          <li class="mobile-nav-item"><a href="pillow-finder.html" class="mobile-nav-link active">Sleep Guide</a></li>
+          <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="mobile-menu-footer">
+        <div class="d-grid gap-2">
+          <!-- Wishlist Button moved from header -->
+          <a href="account.html#saved" class="btn-nestora btn-nestora-secondary btn-nestora-sm d-flex align-items-center justify-content-between px-3">
+            <span><i class="bi bi-heart me-2"></i> Wishlist</span>
+            <span class="action-badge wishlist-badge-count position-static" style="display: none;">0</span>
+          </a>
+          <!-- Cart Button moved from header -->
+          <button type="button" class="btn-nestora btn-nestora-secondary btn-nestora-sm d-flex align-items-center justify-content-between px-3 btn-cart-drawer-toggle" onclick="document.querySelector('.mobile-menu-drawer')?.classList.remove('open');">
+            <span><i class="bi bi-bag me-2"></i> Cart</span>
+            <span class="action-badge cart-badge-count position-static" style="display: none;">0</span>
+          </button>
+          <!-- Sign Up Button moved from header -->
+          <a href="signup.html" class="btn-nestora btn-nestora-primary btn-nestora-sm text-center">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main Pillow Finder Wizard Section -->
   <main class="section-spacing">
     <div class="nestora-container nestora-container-narrow">
-      <nav aria-label="breadcrumb" class="mb-4">
-        <ol class="breadcrumb small">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="shop.html?category=pillows">Pillows</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Pillow Finder Quiz</li>
-        </ol>
-      </nav>
 
       <div class="text-center mb-5">
         <span class="eyebrow"><i class="bi bi-stars me-1"></i> Interactive Sleep Guide</span>
@@ -239,6 +262,71 @@
         </div>
       </div>
 
+      <!-- Additional Section: Sleep Ergonomics & Pillow Loft Science -->
+      <section class="mt-5 pt-4 border-top">
+        <div class="section-header text-center mb-5">
+          <span class="eyebrow">Sleep Science & Alignment</span>
+          <h2 class="font-display">The Anatomy of Pillow Loft & Spinal Support</h2>
+          <p class="text-muted mx-auto" style="max-width: 650px;">
+            A pillow is not just a cushion—it is the orthopedic foundation that keeps your cervical spine aligned with your mattress all night.
+          </p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="card border rounded-3 p-4 bg-surface h-100 shadow-xs text-center">
+              <div class="rounded-circle bg-sage-light text-sage mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                <i class="bi bi-person-walking fs-4"></i>
+              </div>
+              <h5 class="h6 mb-2">Side Sleepers</h5>
+              <div class="badge-nestora badge-organic mb-3">High Loft (5"–6")</div>
+              <p class="small text-muted mb-0">
+                Fills the wide space between your shoulder point and ear, preventing lateral neck tilting and morning shoulder stiffness.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card border rounded-3 p-4 bg-surface h-100 shadow-xs text-center">
+              <div class="rounded-circle bg-sage-light text-sage mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                <i class="bi bi-person-standing fs-4"></i>
+              </div>
+              <h5 class="h6 mb-2">Back Sleepers</h5>
+              <div class="badge-nestora badge-cooling mb-3">Medium Loft (3.5"–4.5")</div>
+              <p class="small text-muted mb-0">
+                Cradles the natural cervical curve of your neck without pitching your head forward, keeping airway passages naturally open.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card border rounded-3 p-4 bg-surface h-100 shadow-xs text-center">
+              <div class="rounded-circle bg-sage-light text-sage mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                <i class="bi bi-person fs-4"></i>
+              </div>
+              <h5 class="h6 mb-2">Stomach Sleepers</h5>
+              <div class="badge-nestora badge-bestseller mb-3">Low Loft (2"–3")</div>
+              <p class="small text-muted mb-0">
+                Provides gentle, low-compression cushioning that prevents hyperextension of the upper back and neck throughout the night.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card border rounded-3 p-4 bg-surface h-100 shadow-xs text-center">
+              <div class="rounded-circle bg-sage-light text-sage mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                <i class="bi bi-thermometer-half fs-4"></i>
+              </div>
+              <h5 class="h6 mb-2">Hot Sleepers</h5>
+              <div class="badge-nestora badge-sale mb-3">Cooling Core</div>
+              <p class="small text-muted mb-0">
+                Pin-core ventilated natural latex and breathable organic cotton covers dissipate excess cranial heat for deep uninterrupted REM sleep.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Educational Content Section -->
       <section class="mt-5 pt-4">
         <div class="row g-4">
@@ -297,21 +385,32 @@
         <div class="col-lg-4 col-md-6">
           <a href="index.html" class="brand-logo mb-3">NESTORA<span class="brand-dot"></span></a>
           <p class="text-secondary small pe-lg-4">NESTORA crafts heirloom-quality sheets, duvets, and ergonomic pillows using pure natural fibers.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
         </div>
         <div class="col-6 col-lg-2 col-md-3">
           <div class="footer-col-title">Shop</div>
           <ul class="footer-links">
-            <li><a href="category.html?cat=sheets">Bed Sheets</a></li>
-            <li><a href="category.html?cat=pillows">Pillows</a></li>
+            <li><a href="shop.html">All Bedding</a></li>
+            <li><a href="shop.html?category=sheets">Bed Sheets</a></li>
+            <li><a href="shop.html?category=pillows">Pillows</a></li>
             <li><a href="collections.html">Collections</a></li>
+            <li><a href="shop.html?sort=newest">New Arrivals</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2 col-md-3">
           <div class="footer-col-title">Help & Support</div>
           <ul class="footer-links">
             <li><a href="contact.html">Shipping & Delivery</a></li>
-            <li><a href="contact.html">100-Night Trial</a></li>
-            <li><a href="about.html">Care Guide</a></li>
+            <li><a href="contact.html">100-Night Trial & Returns</a></li>
+            <li><a href="about.html">Fabric Care Guide</a></li>
+            <li><a href="contact.html#faqs">FAQs</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-6">
@@ -328,6 +427,7 @@
         <div class="d-flex gap-3">
           <a href="about.html">Privacy Policy</a>
           <a href="about.html">Terms of Service</a>
+          <a href="about.html">Accessibility</a>
         </div>
       </div>
     </div>
@@ -343,7 +443,6 @@
   <script src="assets/js/wishlist.js"></script>
   <script src="assets/js/compare.js"></script>
   <script src="assets/js/quick-view.js"></script>
-  <script src="assets/js/search.js"></script>
   <script src="assets/js/pillow-finder.js"></script>
   <script src="assets/js/orders.js"></script>
   <script src="assets/js/main.js"></script>

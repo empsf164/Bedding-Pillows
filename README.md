@@ -6,23 +6,25 @@ NESTORA is a luxury, production-quality responsive bedding, linen, and pillow di
 
 ---
 
-## 🌟 Key Highlights & Architectural Features
+## 🌟 Key Highlights & Architecture
 
-- **Editorial Luxury Visual Direction**:
+- **Streamlined Navigation & Visual Direction**:
+  - Direct menu links: **Home**, **Shop**, **Collections**, **Sleep Guide**, **About**, **Contact**.
+  - Right action items: **Wishlist**, **Bedding Bag (Cart Drawer)**, and **Sign Up** CTA.
+  - Relatable luxury SVG favicon in all `<head>` sections.
+  - 4-column footer consistent across all pages with social channels (Instagram, Pinterest, Facebook, Twitter/X, YouTube).
+- **Curated Natural Palette**:
   - Light mode: Warm Ivory (`#FDFBF7`), Soft Linen (`#EDE6D8`), Sand (`#D8C8B0`), Taupe (`#8C7E72`), Warm Stone (`#A89F91`), Deep Charcoal (`#1C1A18`), and Muted Sage (`#5E6D5B`).
   - Dark mode: Deep Charcoal (`#121110`), Warm Black (`#0F0E0D`), Soft Ivory (`#FAF7F2`), Warm Taupe (`#A89B8D`), and Muted Sage (`#8DA08A`).
 - **Interactive Pillow Finder Wizard**:
   - 4-step sleep posture, firmness, temperature, and fill quiz with intelligent matching algorithm and "Why it matches your preferences" breakdown.
 - **Product Comparison Engine**:
   - Compare up to 4 items simultaneously with floating drawer and fully responsive side-by-side spec comparison table.
-- **Live Search & Quick Filter Overlays**:
-  - Real-time debounced search across titles, descriptions, materials, and categories.
-  - Multi-attribute shop filter sidebar and offcanvas drawer.
 - **Modular Shopping Bag & Distraction-Free Checkout**:
   - Slide-in mini-cart drawer with free shipping progress bar ($150 threshold).
   - 4-step checkout flow (Contact, Shipping, Delivery, Payment) with payment field masks and instant order confirmation tracking (Confirmed → Packed → Shipped → Delivered).
 - **Persistent LocalStorage State**:
-  - Theme (Dark/Light), Shopping Bag items, Wishlist favorites, Comparison queue, and simulated Authentication.
+  - Shopping Bag items, Wishlist favorites, Comparison queue, and simulated Authentication.
 
 ---
 
@@ -31,7 +33,7 @@ NESTORA is a luxury, production-quality responsive bedding, linen, and pillow di
 ```
 nestora-bedding/
 │
-├── index.html                  # Editorial Homepage with Hero, Categories, Best Sellers, Comfort Personas, Pillow Finder preview, Material Explorer, and Reviews
+├── index.html                  # Editorial Homepage with Hero, Categories, Best Sellers, Comfort Personas, Pillow Quiz preview, Material Explorer, and Reviews
 ├── shop.html                   # Primary Product Discovery & Catalog with Sidebar Filters, Sorting, and Search
 ├── category.html               # Dynamic Category Layout (Bed Sheets, Pillows, Duvet Covers, Comforters, Quilts, Blankets)
 ├── product-details.html        # Product Detail Page with Multi-Angle Gallery, Swatches, Size Selector, Tabs, Features, and Related Items
@@ -48,20 +50,19 @@ nestora-bedding/
 ├── login.html                  # Customer Sign In
 ├── signup.html                 # Customer Account Creation
 ├── forgot-password.html        # Password Recovery Flow
-├── 404.html                    # 404 Page Not Found
+├── 404.html                    # 404 Error Page
 ├── coming-soon.html            # Coming Soon Seasonal Capsule Preview
 │
 ├── assets/
 │   ├── css/
 │   │   ├── style.css           # Design Tokens, CSS Variables, Typography, Color Palettes, Base Resets
-│   │   ├── components.css      # Header, Mega Menus, Product Cards, Drawers, Modals, Badges, Toasts, Footer
+│   │   ├── components.css      # Header, Cards, Drawers, Modals, Badges, Toasts, Footer
 │   │   └── responsive.css      # Responsive Breakpoints (320px to 2560px+)
 │   │
 │   └── js/
 │       ├── products.js         # Comprehensive Bedding & Pillow Catalog Data Store
-│       ├── theme.js            # Light / Dark Mode Toggle with LocalStorage Sync
+│       ├── theme.js            # Light / Dark Mode System
 │       ├── auth.js             # Simulated Authentication & User Profile State
-│       ├── search.js           # Live Global Search Overlay with Category Pills
 │       ├── filters.js          # Shop & Category Filtering and Sorting Engine
 │       ├── compare.js          # Product Comparison State & Matrix Renderer
 │       ├── wishlist.js         # Wishlist & Saved Items Management
@@ -85,23 +86,8 @@ nestora-bedding/
 - **CSS3 / Vanilla CSS** (CSS custom properties design system, smooth transitions)
 - **Bootstrap 5.3.3** (Grid architecture & utility helpers)
 - **Bootstrap Icons 1.11.3**
-- **Vanilla JavaScript (ES6 Modules)** (Zero heavyweight framework overhead)
+- **Vanilla JavaScript (ES6 Modules)**
 - **Google Fonts** (DM Serif Display, Cormorant Garamond, Plus Jakarta Sans, Inter)
-
----
-
-## 🧪 Quality Control & Testing Checklist
-
-- [x] **No Home-2, Dashboard, or Admin Dashboard pages exposed**
-- [x] **Light / Dark Mode toggle with persistent memory and zero flash**
-- [x] **Interactive Pillow Finder with dynamic scoring and match explanation**
-- [x] **Product Comparison matrix with clear/remove functionality**
-- [x] **Live search overlay with instant match highlighting**
-- [x] **Cart drawer and Cart page syncing with free shipping progress threshold**
-- [x] **Customer sign-in, sign-up, and forgot password flows**
-- [x] **Zero broken links (`href="#"` replaced with authentic routes)**
-- [x] **Responsive mobile drawer with expandable accordions**
-- [x] **Clean, editorial luxury bedroom photography and tactile storytelling**
 
 ---
 
