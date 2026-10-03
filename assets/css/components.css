@@ -1,0 +1,1494 @@
+/* ==========================================================================
+   NESTORA — LUXURY BEDDING & SLEEP COMFORT
+   Component Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Announcement Bar
+   -------------------------------------------------------------------------- */
+.nestora-announcement {
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 0.45rem 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1010;
+}
+
+.nestora-announcement a {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-left: 0.35rem;
+}
+
+.nestora-announcement .shipping-highlight {
+  color: var(--color-accent-sage);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   2. Mandatory Navigation Bar
+   -------------------------------------------------------------------------- */
+.nestora-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.nestora-header.scrolled {
+  box-shadow: var(--shadow-sm);
+  background-color: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .nestora-header.scrolled {
+  background-color: rgba(18, 17, 16, 0.95);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: 1.5rem;
+}
+
+/* Brand Logo */
+.brand-logo {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1;
+}
+
+.brand-logo .brand-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-sage);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+/* Desktop Navigation Links */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-desktop > li {
+  position: relative;
+}
+
+.nav-desktop-link {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-desktop-link:hover,
+.nav-desktop-link.active {
+  color: var(--color-accent-sage);
+}
+
+.nav-desktop-link i {
+  font-size: 0.75rem;
+  transition: transform var(--transition-fast);
+}
+
+.nav-desktop > li:hover > .nav-desktop-link i {
+  transform: rotate(180deg);
+}
+
+/* Dropdown / Mega Menu Container */
+.dropdown-menu-nestora {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 1.25rem;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 1050;
+}
+
+.nav-desktop > li:hover .dropdown-menu-nestora {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu-nestora.mega-menu {
+  width: 580px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 200px;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  left: -50px;
+}
+
+.dropdown-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-list li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-list a {
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dropdown-list a:hover {
+  color: var(--color-accent-sage);
+  transform: translateX(3px);
+}
+
+.dropdown-featured-card {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.dropdown-featured-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  margin-bottom: 0.6rem;
+}
+
+.dropdown-featured-card .card-caption {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Header Action Icons */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.nav-action-btn:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent-sage);
+}
+
+.action-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 18px;
+  height: 18px;
+  background-color: var(--color-accent-sage);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* Account Dropdown */
+.account-dropdown {
+  position: relative;
+}
+
+.account-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 0.75rem 0;
+  min-width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+  z-index: 1050;
+}
+
+.account-dropdown:hover .account-menu,
+.account-dropdown.show .account-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.account-menu-header {
+  padding: 0.6rem 1.2rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: 0.4rem;
+}
+
+.account-menu-header .user-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.account-menu-header .user-email {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.account-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.2rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.account-menu a:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent-sage);
+}
+
+.account-menu a i {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   3. Mobile Navigation Drawer
+   -------------------------------------------------------------------------- */
+.mobile-nav-toggle {
+  display: none;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(18, 17, 16, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  z-index: 1200;
+}
+
+.mobile-menu-drawer.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(85vw, 380px);
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform var(--transition-base);
+  overflow-y: auto;
+}
+
+.mobile-menu-drawer.open .mobile-menu-content {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu-body {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-link.has-sub i {
+  transition: transform var(--transition-fast);
+}
+
+.mobile-nav-link.active-sub i {
+  transform: rotate(180deg);
+}
+
+.mobile-sub-menu {
+  display: none;
+  padding: 0 0 0.8rem 1rem;
+  list-style: none;
+}
+
+.mobile-sub-menu.show {
+  display: block;
+}
+
+.mobile-sub-menu a {
+  display: block;
+  padding: 0.45rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.mobile-menu-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   4. Global Search Overlay
+   -------------------------------------------------------------------------- */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(18, 17, 16, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-container {
+  width: min(92vw, 760px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: transform var(--transition-base);
+}
+
+.search-overlay.active .search-container {
+  transform: translateY(0);
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  gap: 1rem;
+}
+
+.search-header i.search-icon {
+  font-size: 1.35rem;
+  color: var(--color-text-muted);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.search-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.search-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.search-quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-tag-chip {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.search-tag-chip:hover {
+  background-color: var(--color-accent-sage-light);
+  color: var(--color-accent-sage);
+  border-color: var(--color-accent-sage);
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.search-result-item {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-secondary);
+  transition: background-color var(--transition-fast);
+}
+
+.search-result-item:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.search-result-item img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+}
+
+.search-result-info {
+  flex: 1;
+}
+
+.search-result-info h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.search-result-info .price {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent-sage);
+}
+
+/* --------------------------------------------------------------------------
+   5. Product Card Component
+   -------------------------------------------------------------------------- */
+.product-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-strong);
+}
+
+.product-card-media {
+  position: relative;
+  aspect-ratio: 1 / 1.05;
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.product-card-media img.primary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow), opacity var(--transition-base);
+}
+
+.product-card-media img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.product-card:hover .product-card-media img.primary-img {
+  transform: scale(1.04);
+}
+
+.product-card:hover .product-card-media img.hover-img {
+  opacity: 1;
+}
+
+.product-card-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.product-card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.card-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1C1A18;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+[data-theme="dark"] .card-action-btn {
+  background-color: rgba(30, 28, 26, 0.9);
+  color: #FAF7F2;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-action-btn:hover,
+.card-action-btn.active {
+  background-color: var(--color-accent-sage);
+  color: #FFFFFF;
+  border-color: var(--color-accent-sage);
+  transform: scale(1.08);
+}
+
+.card-action-btn.active i {
+  font-weight: bold;
+}
+
+.product-card-quickadd {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all var(--transition-base);
+  z-index: 2;
+}
+
+.product-card:hover .product-card-quickadd {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.product-card-body {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card-category {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.product-card-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+.product-card-title a {
+  color: var(--color-text-primary);
+}
+
+.product-card-title a:hover {
+  color: var(--color-accent-sage);
+}
+
+.product-card-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.product-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.product-card-rating .stars {
+  color: #D4A017;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.product-card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.product-card-price .current {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.product-card-price .original {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+/* Color Swatches on Card */
+.swatch-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.swatch-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   6. Category & Comfort Cards
+   -------------------------------------------------------------------------- */
+.category-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1 / 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.category-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  z-index: 1;
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 26, 24, 0.05) 40%, rgba(28, 26, 24, 0.75) 100%);
+  z-index: 2;
+  transition: opacity var(--transition-base);
+}
+
+.category-card-content {
+  position: relative;
+  z-index: 3;
+  color: #FFFFFF;
+}
+
+.category-card h3 {
+  color: #FFFFFF;
+  font-size: 1.45rem;
+  margin-bottom: 0.25rem;
+}
+
+.category-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Comfort Persona Cards */
+.comfort-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-align: left;
+  transition: all var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.comfort-card:hover {
+  border-color: var(--color-accent-sage);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.comfort-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-sage-light);
+  color: var(--color-accent-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.comfort-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.comfort-card p {
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. Material Explorer Cards
+   -------------------------------------------------------------------------- */
+.material-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.material-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-sage);
+}
+
+.material-card-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.material-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.material-card:hover .material-card-media img {
+  transform: scale(1.06);
+}
+
+.material-card-body {
+  padding: 1.25rem;
+}
+
+.material-card-body h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.material-card-body p {
+  font-size: 0.84rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. Pillow Finder Component
+   -------------------------------------------------------------------------- */
+.pillow-finder-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow-md);
+}
+
+.finder-progress-bar {
+  height: 6px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.finder-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent-sage);
+  transition: width var(--transition-base);
+}
+
+.finder-step {
+  display: none;
+}
+
+.finder-step.active {
+  display: block;
+}
+
+.finder-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.finder-option-card {
+  background-color: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.finder-option-card:hover {
+  border-color: var(--color-accent-sage);
+  background-color: var(--color-surface-hover);
+}
+
+.finder-option-card.selected {
+  border-color: var(--color-accent-sage);
+  background-color: var(--color-accent-sage-light);
+}
+
+.finder-option-card i {
+  font-size: 2rem;
+  color: var(--color-accent-sage);
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.finder-option-card h5 {
+  margin-bottom: 0.25rem;
+}
+
+.finder-option-card p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. Cart Drawer & Floating Bar
+   -------------------------------------------------------------------------- */
+.cart-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 17, 16, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1400;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.cart-drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(92vw, 440px);
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+}
+
+.cart-drawer-backdrop.open .cart-drawer {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-shipping-bar {
+  background-color: var(--color-bg-secondary);
+  padding: 0.85rem 1.5rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shipping-progress {
+  height: 5px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+
+.shipping-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent-sage);
+  transition: width var(--transition-base);
+}
+
+.cart-drawer-body {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-item-row {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-secondary);
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.cart-item-meta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.cart-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface);
+}
+
+.cart-qty-stepper button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cart-qty-stepper span {
+  width: 32px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cart-drawer-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.cart-drawer-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-family: var(--font-ui);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   10. Floating Comparison Bar
+   -------------------------------------------------------------------------- */
+.compare-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 1100;
+  transition: transform var(--transition-base);
+}
+
+.compare-bar.active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.compare-bar-items {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.compare-bar-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.compare-bar-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-bar-thumb .remove-btn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-danger);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  cursor: pointer;
+  border: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Modal & Quick View
+   -------------------------------------------------------------------------- */
+.nestora-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 17, 16, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.nestora-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nestora-modal-dialog {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: min(95vw, 880px);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform var(--transition-base);
+}
+
+.nestora-modal-backdrop.open .nestora-modal-dialog {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   12. Toast Notifications
+   -------------------------------------------------------------------------- */
+.toast-container-nestora {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 380px;
+  pointer-events: none;
+}
+
+.toast-nestora {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  pointer-events: auto;
+  transform: translateX(120%);
+  transition: transform var(--transition-base);
+}
+
+.toast-nestora.show {
+  transform: translateX(0);
+}
+
+.toast-icon {
+  font-size: 1.25rem;
+  color: var(--color-accent-sage);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.toast-message {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   13. Form Controls & Inputs
+   -------------------------------------------------------------------------- */
+.form-group-nestora {
+  margin-bottom: 1.25rem;
+}
+
+.form-label-nestora {
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.form-control-nestora {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control-nestora:focus {
+  border-color: var(--color-accent-sage);
+  box-shadow: 0 0 0 3px var(--color-accent-sage-light);
+}
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+.nestora-footer {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: 2rem;
+  margin-top: auto;
+}
+
+.footer-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-sage);
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.footer-newsletter-form input {
+  flex: 1;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.footer-social-btn:hover {
+  background-color: var(--color-accent-sage);
+  color: #FFFFFF;
+  border-color: var(--color-accent-sage);
+}
+
+.footer-bottom {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pillow Finder & Sleep Guide — NESTORA</title>
+  <meta name="description" content="Discover your ideal pillow in 60 seconds with the NESTORA interactive Pillow Finder. Match your sleeping position and thermal preference to custom comfort.">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Nestora Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="nestora-announcement">
+    <span>Enjoy <strong>Complimentary Insured Shipping</strong> on orders over $150 · 100-Night In-Home Sleep Trial</span>
+  </div>
+
+  <!-- Mandatory Navbar -->
+  <header class="nestora-header">
+    <div class="nestora-container">
+      <div class="navbar-inner">
+        <a href="index.html" class="brand-logo">
+          NESTORA<span class="brand-dot"></span>
+        </a>
+
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-desktop-link">Home</a></li>
+          <li><a href="category.html?cat=bedding" class="nav-desktop-link">Bedding</a></li>
+          <li><a href="category.html?cat=pillows" class="nav-desktop-link">Pillows</a></li>
+          <li><a href="collections.html" class="nav-desktop-link">Collections</a></li>
+          <li><a href="shop.html" class="nav-desktop-link">Shop All</a></li>
+          <li><a href="pillow-finder.html" class="nav-desktop-link active"><i class="bi bi-stars text-sage me-1"></i> Sleep Guide</a></li>
+          <li><a href="about.html" class="nav-desktop-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="nav-action-btn btn-search-trigger" aria-label="Search"><i class="bi bi-search"></i></button>
+          <button type="button" class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme"><i class="bi bi-moon-stars"></i></button>
+
+          <div class="account-dropdown">
+            <button type="button" class="nav-action-btn" aria-label="Account"><i class="bi bi-person"></i></button>
+            <div class="account-menu">
+              <div class="auth-logged-out">
+                <a href="login.html"><i class="bi bi-box-arrow-in-right"></i> Sign In</a>
+                <a href="signup.html"><i class="bi bi-person-plus"></i> Create Account</a>
+              </div>
+              <div class="auth-logged-in" style="display: none;">
+                <a href="account.html"><i class="bi bi-person-circle"></i> My Account</a>
+                <a href="orders.html"><i class="bi bi-bag-check"></i> My Orders</a>
+                <a href="#" class="btn-nestora-logout text-danger"><i class="bi bi-box-arrow-right text-danger"></i> Sign Out</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="account.html#saved" class="nav-action-btn" aria-label="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="action-badge wishlist-badge-count" style="display: none;">0</span>
+          </a>
+
+          <button type="button" class="nav-action-btn btn-cart-drawer-toggle" aria-label="Shopping Cart">
+            <i class="bi bi-bag"></i>
+            <span class="action-badge cart-badge-count" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Pillow Finder Wizard Section -->
+  <main class="section-spacing">
+    <div class="nestora-container nestora-container-narrow">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html?category=pillows">Pillows</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Pillow Finder Quiz</li>
+        </ol>
+      </nav>
+
+      <div class="text-center mb-5">
+        <span class="eyebrow"><i class="bi bi-stars me-1"></i> Interactive Sleep Guide</span>
+        <h1 class="display-4 font-display">Find Your Ideal Pillow Match</h1>
+        <p class="lead text-secondary mx-auto" style="max-width: 600px;">
+          Answer 4 simple questions about how you sleep, and we'll match you to pillows engineered for your comfort preferences.
+        </p>
+      </div>
+
+      <!-- Quiz Wrapper -->
+      <div class="pillow-finder-box mb-5">
+        <!-- Progress Bar -->
+        <div class="d-flex justify-content-between small text-muted mb-2">
+          <span id="finder-step-counter">Step 1 of 4</span>
+          <span>100-Night In-Home Trial</span>
+        </div>
+        <div class="finder-progress-bar">
+          <div class="finder-progress-fill" style="width: 25%;"></div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="finder-quiz-view">
+          <!-- Step 1: Sleep Position -->
+          <div class="finder-step active" id="quiz-step-1">
+            <h3 class="h4 text-center mb-2">1. How do you primarily sleep?</h3>
+            <p class="small text-muted text-center mb-4">Your sleeping position determines the loft height needed for spinal neutrality.</p>
+            <div class="finder-options-grid">
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('sleepPosition', 'side', this)">
+                <i class="bi bi-person-walking"></i>
+                <h5>Side Sleeper</h5>
+                <p>Needs higher loft to fill the shoulder cavity.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('sleepPosition', 'back', this)">
+                <i class="bi bi-person-standing"></i>
+                <h5>Back Sleeper</h5>
+                <p>Needs medium loft to cradle cervical curve.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('sleepPosition', 'stomach', this)">
+                <i class="bi bi-person"></i>
+                <h5>Stomach Sleeper</h5>
+                <p>Needs soft, low-profile compression.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('sleepPosition', 'combo', this)">
+                <i class="bi bi-arrow-repeat"></i>
+                <h5>Combination</h5>
+                <p>Shifts positions throughout the night.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Firmness -->
+          <div class="finder-step" id="quiz-step-2">
+            <h3 class="h4 text-center mb-2">2. What feel and firmness do you prefer?</h3>
+            <p class="small text-muted text-center mb-4">Choose the tactile sensation you want beneath your head.</p>
+            <div class="finder-options-grid">
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('firmness', 'soft', this)">
+                <i class="bi bi-cloud"></i>
+                <h5>Soft & Plush</h5>
+                <p>Gentle sinking cloud-like sensation.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('firmness', 'medium', this)">
+                <i class="bi bi-shield"></i>
+                <h5>Medium Balanced</h5>
+                <p>Harmonious blend of contour and soft loft.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('firmness', 'firm', this)">
+                <i class="bi bi-bricks"></i>
+                <h5>Firm & Supportive</h5>
+                <p>Resilient structural lift without bottoming out.</p>
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-sm btn-link text-muted" onclick="NestoraPillowFinder.goToStep(1)">← Back to Previous Step</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Temperature -->
+          <div class="finder-step" id="quiz-step-3">
+            <h3 class="h4 text-center mb-2">3. What is your temperature preference?</h3>
+            <p class="small text-muted text-center mb-4">Select how warm or cool you typically feel during sleep.</p>
+            <div class="finder-options-grid">
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('temperature', 'cool', this)">
+                <i class="bi bi-snow"></i>
+                <h5>Cool & Ventilated</h5>
+                <p>Tend to sleep warm and seek continuous coolness.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('temperature', 'balanced', this)">
+                <i class="bi bi-wind"></i>
+                <h5>Balanced Thermal</h5>
+                <p>Comfortable year-round temperature neutrality.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('temperature', 'warm', this)">
+                <i class="bi bi-sun"></i>
+                <h5>Cozy Warmth</h5>
+                <p>Love being enveloped in gentle insulating down.</p>
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-sm btn-link text-muted" onclick="NestoraPillowFinder.goToStep(2)">← Back to Previous Step</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Fill Material -->
+          <div class="finder-step" id="quiz-step-4">
+            <h3 class="h4 text-center mb-2">4. Do you have a preferred fill material?</h3>
+            <p class="small text-muted text-center mb-4">Choose your favorite inner material or let us recommend.</p>
+            <div class="finder-options-grid">
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('fill', 'latex', this)">
+                <i class="bi bi-tree"></i>
+                <h5>Natural Talalay Latex</h5>
+                <p>Bouncy, breathable, naturally hypoallergenic.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('fill', 'down', this)">
+                <i class="bi bi-feather"></i>
+                <h5>Goose Down & Feather</h5>
+                <p>Heirloom cloud loft and moldable comfort.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('fill', 'foam', this)">
+                <i class="bi bi-grid-3x3"></i>
+                <h5>Contour Memory Foam</h5>
+                <p>Adaptive pressure relief with herbal bamboo.</p>
+              </div>
+              <div class="finder-option-card" onclick="NestoraPillowFinder.selectOption('fill', 'any', this)">
+                <i class="bi bi-stars"></i>
+                <h5>No Preference</h5>
+                <p>Show me the best matches for my posture.</p>
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-sm btn-link text-muted" onclick="NestoraPillowFinder.goToStep(3)">← Back to Previous Step</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results View -->
+        <div id="finder-results-view" style="display: none;">
+          <div class="text-center mb-4">
+            <div class="d-inline-flex p-3 rounded-circle bg-success bg-opacity-10 text-success mb-2" style="font-size: 1.8rem;">
+              <i class="bi bi-stars"></i>
+            </div>
+            <h3 class="h2">Your Curated Pillow Matches</h3>
+            <p class="text-muted">Based on your sleep posture and thermal preferences, here are our top recommendations:</p>
+          </div>
+
+          <div class="row g-4" id="finder-matched-cards">
+            <!-- Rendered by pillow-finder.js calculateRecommendations() -->
+          </div>
+
+          <div class="text-center mt-4 pt-3 border-top">
+            <button class="btn-nestora btn-nestora-secondary" onclick="NestoraPillowFinder.restartFinder()">
+              <i class="bi bi-arrow-counterclockwise me-1"></i> Restart Pillow Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Content Section -->
+      <section class="mt-5 pt-4">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card border rounded-3 p-4 bg-surface h-100">
+              <i class="bi bi-shield-check text-sage fs-3 mb-2"></i>
+              <h5 class="h6">100-Night In-Home Trial</h5>
+              <p class="small text-muted mb-0">Test your new pillow on your own mattress. If it doesn't give you better sleep, returns are completely free.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border rounded-3 p-4 bg-surface h-100">
+              <i class="bi bi-feather text-sage fs-3 mb-2"></i>
+              <h5 class="h6">Certified Clean Materials</h5>
+              <p class="small text-muted mb-0">OEKO-TEX® Standard 100, RDS Ethical Down, and Eco-Institut certified natural Talalay latex.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border rounded-3 p-4 bg-surface h-100">
+              <i class="bi bi-chat-heart text-sage fs-3 mb-2"></i>
+              <h5 class="h6">Sleep Concierge Support</h5>
+              <p class="small text-muted mb-0">Have unique sleep preferences? Chat with our comfort specialists for customized bedroom styling advice.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-backdrop">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h5 class="mb-0 font-display">Bedding Bag (<span class="cart-badge-count">0</span>)</h5>
+        <button type="button" class="btn-close btn-close-cart-drawer"></button>
+      </div>
+      <div class="cart-shipping-bar" id="cart-drawer-shipping-bar"></div>
+      <div class="cart-drawer-body" id="cart-drawer-items"></div>
+      <div class="cart-drawer-footer" id="cart-drawer-footer-wrapper" style="display: none;">
+        <div class="cart-drawer-total">
+          <span>Subtotal</span>
+          <span id="cart-drawer-subtotal">$0</span>
+        </div>
+        <div class="d-grid gap-2">
+          <a href="checkout.html" class="btn-nestora btn-nestora-primary text-center">Proceed to Checkout</a>
+          <a href="cart.html" class="btn-nestora btn-nestora-secondary text-center">View Full Bag</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-Column Footer -->
+  <footer class="nestora-footer">
+    <div class="nestora-container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">NESTORA<span class="brand-dot"></span></a>
+          <p class="text-secondary small pe-lg-4">NESTORA crafts heirloom-quality sheets, duvets, and ergonomic pillows using pure natural fibers.</p>
+        </div>
+        <div class="col-6 col-lg-2 col-md-3">
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=sheets">Bed Sheets</a></li>
+            <li><a href="category.html?cat=pillows">Pillows</a></li>
+            <li><a href="collections.html">Collections</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 col-md-3">
+          <div class="footer-col-title">Help & Support</div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Shipping & Delivery</a></li>
+            <li><a href="contact.html">100-Night Trial</a></li>
+            <li><a href="about.html">Care Guide</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-col-title">Sleep Journal</div>
+          <p class="small text-muted mb-2">Subscribe to receive fabric care insights and $20 off your first bedding order.</p>
+          <form class="footer-newsletter-form newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn-nestora btn-nestora-sage btn-nestora-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year"></span> NESTORA Home LLC. Better Sleep Starts With Better Comfort.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html">Privacy Policy</a>
+          <a href="about.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/notifications.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/quick-view.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/pillow-finder.js"></script>
+  <script src="assets/js/orders.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const pos = params.get('pos');
+      if (pos) {
+        const option = document.querySelector(`.finder-option-card[onclick*="'${pos}'"]`);
+        if (option) {
+          NestoraPillowFinder.selectOption('sleepPosition', pos, option);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

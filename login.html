@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Sign In — NESTORA Bedding</title>
+  <meta name="description" content="Sign in to your NESTORA sleep account to view past orders, track deliveries, and manage saved bedding items.">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Nestora Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-secondary bg-opacity-25">
+
+  <!-- Header Minimal -->
+  <header class="py-3 bg-surface border-bottom">
+    <div class="nestora-container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="brand-logo fs-3">NESTORA<span class="brand-dot"></span></a>
+      <a href="shop.html" class="btn-nestora btn-nestora-ghost btn-nestora-sm">Explore Bedding</a>
+    </div>
+  </header>
+
+  <!-- Login Form Container -->
+  <main class="section-spacing d-flex align-items-center justify-content-center">
+    <div class="nestora-container" style="max-width: 480px;">
+      <div class="card border rounded-3 p-4 p-md-5 bg-surface shadow-md">
+        <div class="text-center mb-4">
+          <span class="eyebrow">Welcome Back</span>
+          <h1 class="h2 font-display mb-1">Sign In to Your Account</h1>
+          <p class="text-muted small">Access your sleep orders and saved items.</p>
+        </div>
+
+        <form id="nestora-login-form">
+          <div class="mb-3">
+            <label for="login-email" class="form-label-nestora">Email Address</label>
+            <input type="email" id="login-email" class="form-control-nestora" value="eleanor.vance@nestora-sleep.com" required placeholder="you@example.com">
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <label for="login-password" class="form-label-nestora mb-0">Password</label>
+              <a href="forgot-password.html" class="small text-muted text-decoration-underline">Forgot Password?</a>
+            </div>
+            <input type="password" id="login-password" class="form-control-nestora mt-1" value="••••••••••••" required placeholder="Enter password">
+          </div>
+
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="remember-me" checked>
+            <label class="form-check-label small text-muted" for="remember-me">
+              Keep me signed in on this device
+            </label>
+          </div>
+
+          <button type="submit" class="btn-nestora btn-nestora-primary w-100 mb-3">Sign In</button>
+
+          <div class="text-center small text-muted mb-4">
+            Don't have an account? <a href="signup.html" class="fw-semibold text-dark text-decoration-underline">Create Account</a>
+          </div>
+
+          <!-- Social Login Placeholders -->
+          <div class="position-relative text-center my-4">
+            <hr class="text-muted">
+            <span class="position-absolute top-50 start-50 translate-middle px-3 bg-surface text-muted small">Or continue with</span>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-secondary w-100 py-2 small fw-semibold" onclick="NestoraAuth.login('google.user@nestora.com', 'Google Member'); setTimeout(()=>window.location.href='account.html',500);">
+              <i class="bi bi-google me-1"></i> Google
+            </button>
+            <button type="button" class="btn btn-outline-secondary w-100 py-2 small fw-semibold" onclick="NestoraAuth.login('apple.user@nestora.com', 'Apple Member'); setTimeout(()=>window.location.href='account.html',500);">
+              <i class="bi bi-apple me-1"></i> Apple
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Minimal -->
+  <footer class="py-4 text-center small text-muted border-top bg-surface">
+    <div class="nestora-container">
+      © <span class="current-year"></span> NESTORA Home LLC. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/notifications.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

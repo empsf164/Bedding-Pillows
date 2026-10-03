@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — Autumn Cashmere & Silk Bedding — NESTORA</title>
+  <meta name="description" content="Be the first to experience NESTORA's forthcoming Autumn Cashmere & Silk seasonal release.">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Nestora Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-secondary bg-opacity-35">
+
+  <!-- Header Minimal -->
+  <header class="py-3 bg-surface border-bottom">
+    <div class="nestora-container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="brand-logo fs-3">NESTORA<span class="brand-dot"></span></a>
+      <a href="shop.html" class="btn-nestora btn-nestora-secondary btn-nestora-sm">Shop Current Collection</a>
+    </div>
+  </header>
+
+  <!-- Coming Soon Main Container -->
+  <main class="section-spacing d-flex align-items-center justify-content-center text-center" style="min-height: 75vh;">
+    <div class="nestora-container" style="max-width: 680px;">
+      <span class="eyebrow">Autumn Season Drop</span>
+      <h1 class="display-3 font-display mb-3">Cashmere & Mulberry Silk</h1>
+      <p class="lead text-secondary mb-4">
+        We are currently weaving our limited-edition winter insulation capsule in northern Italy. Pure Mongolian cashmere coverlets and heavy gauge waffle quilts.
+      </p>
+
+      <div class="card border rounded-3 p-4 bg-surface shadow-md mx-auto" style="max-width: 500px;">
+        <h5 class="h6 mb-2">Join the VIP Private Preview</h5>
+        <p class="small text-muted mb-3">Subscribers receive 24-hour priority ordering before public launch.</p>
+        
+        <form onsubmit="event.preventDefault(); window.NestoraToast.show({ title: 'VIP Access Granted', message: 'You will receive priority access when the collection arrives.', icon: 'bi-envelope-check' }); this.reset();">
+          <div class="input-group">
+            <input type="email" class="form-control-nestora" placeholder="Enter your email address" required>
+            <button class="btn-nestora btn-nestora-primary" type="submit">Notify Me</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-5">
+        <a href="shop.html" class="btn-nestora btn-nestora-link">Explore Available Sheets & Pillows →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Minimal -->
+  <footer class="py-4 text-center small text-muted border-top bg-surface">
+    <div class="nestora-container">
+      © <span class="current-year"></span> NESTORA Home LLC. Better Sleep Starts With Better Comfort.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/notifications.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

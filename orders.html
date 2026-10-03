@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders & Shipments — NESTORA Bedding</title>
+  <meta name="description" content="Track your active shipments, view past bedding orders, and reorder your favorite luxury sleep essentials.">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Nestora Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="nestora-announcement">
+    <span>Enjoy <strong>Complimentary Insured Shipping</strong> on orders over $150 · 100-Night In-Home Sleep Trial</span>
+  </div>
+
+  <!-- Mandatory Navbar -->
+  <header class="nestora-header">
+    <div class="nestora-container">
+      <div class="navbar-inner">
+        <a href="index.html" class="brand-logo">
+          NESTORA<span class="brand-dot"></span>
+        </a>
+
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-desktop-link">Home</a></li>
+          <li><a href="category.html?cat=bedding" class="nav-desktop-link">Bedding</a></li>
+          <li><a href="category.html?cat=pillows" class="nav-desktop-link">Pillows</a></li>
+          <li><a href="collections.html" class="nav-desktop-link">Collections</a></li>
+          <li><a href="shop.html" class="nav-desktop-link">Shop All</a></li>
+          <li><a href="pillow-finder.html" class="nav-desktop-link"><i class="bi bi-stars text-sage me-1"></i> Sleep Guide</a></li>
+          <li><a href="about.html" class="nav-desktop-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="nav-action-btn btn-search-trigger" aria-label="Search"><i class="bi bi-search"></i></button>
+          <button type="button" class="nav-action-btn theme-toggle-btn" aria-label="Toggle Theme"><i class="bi bi-moon-stars"></i></button>
+
+          <div class="account-dropdown">
+            <button type="button" class="nav-action-btn active" aria-label="Account"><i class="bi bi-person"></i></button>
+            <div class="account-menu">
+              <a href="account.html"><i class="bi bi-person-circle"></i> My Account</a>
+              <a href="orders.html"><i class="bi bi-bag-check"></i> My Orders</a>
+              <a href="account.html#saved"><i class="bi bi-heart"></i> Saved Items</a>
+              <a href="#" class="btn-nestora-logout text-danger"><i class="bi bi-box-arrow-right text-danger"></i> Sign Out</a>
+            </div>
+          </div>
+
+          <a href="account.html#saved" class="nav-action-btn" aria-label="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="action-badge wishlist-badge-count" style="display: none;">0</span>
+          </a>
+
+          <button type="button" class="nav-action-btn btn-cart-drawer-toggle" aria-label="Shopping Cart">
+            <i class="bi bi-bag"></i>
+            <span class="action-badge cart-badge-count" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Search Overlay -->
+  <div class="search-overlay" id="nestora-search-overlay">
+    <div class="search-container">
+      <div class="search-header">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" class="search-input" id="search-input-field" placeholder="Search linen sheets, cooling pillows, duvet sets..." autocomplete="off">
+        <button type="button" class="search-close-btn btn-close-search"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="search-body">
+        <div class="row g-3" id="search-results-output"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orders Main Section -->
+  <main class="section-spacing">
+    <div class="nestora-container nestora-container-narrow">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="account.html">Account</a></li>
+          <li class="breadcrumb-item active" aria-current="page">My Orders</li>
+        </ol>
+      </nav>
+
+      <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
+        <div>
+          <span class="eyebrow">Order History</span>
+          <h1 class="h2 mb-0">Your Bedding Shipments</h1>
+        </div>
+        <a href="shop.html" class="btn-nestora btn-nestora-primary btn-nestora-sm">Shop New Bedding</a>
+      </div>
+
+      <!-- Orders Container -->
+      <div id="orders-list-container">
+        <!-- Rendered by orders.js renderOrdersPage() -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-backdrop">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h5 class="mb-0 font-display">Bedding Bag (<span class="cart-badge-count">0</span>)</h5>
+        <button type="button" class="btn-close btn-close-cart-drawer"></button>
+      </div>
+      <div class="cart-shipping-bar" id="cart-drawer-shipping-bar"></div>
+      <div class="cart-drawer-body" id="cart-drawer-items"></div>
+      <div class="cart-drawer-footer" id="cart-drawer-footer-wrapper" style="display: none;">
+        <div class="cart-drawer-total">
+          <span>Subtotal</span>
+          <span id="cart-drawer-subtotal">$0</span>
+        </div>
+        <div class="d-grid gap-2">
+          <a href="checkout.html" class="btn-nestora btn-nestora-primary text-center">Proceed to Checkout</a>
+          <a href="cart.html" class="btn-nestora btn-nestora-secondary text-center">View Full Bag</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-Column Footer -->
+  <footer class="nestora-footer">
+    <div class="nestora-container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">NESTORA<span class="brand-dot"></span></a>
+          <p class="text-secondary small pe-lg-4">NESTORA crafts heirloom-quality sheets, duvets, and ergonomic pillows using pure natural fibers.</p>
+        </div>
+        <div class="col-6 col-lg-2 col-md-3">
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=sheets">Bed Sheets</a></li>
+            <li><a href="category.html?cat=pillows">Pillows</a></li>
+            <li><a href="collections.html">Collections</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 col-md-3">
+          <div class="footer-col-title">Help & Support</div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Shipping & Delivery</a></li>
+            <li><a href="contact.html">100-Night Trial</a></li>
+            <li><a href="about.html">Care Guide</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-col-title">Sleep Journal</div>
+          <p class="small text-muted mb-2">Subscribe to receive fabric care insights and $20 off your first bedding order.</p>
+          <form class="footer-newsletter-form newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn-nestora btn-nestora-sage btn-nestora-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span class="current-year"></span> NESTORA Home LLC. Better Sleep Starts With Better Comfort.</div>
+        <div class="d-flex gap-3">
+          <a href="about.html">Privacy Policy</a>
+          <a href="about.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/notifications.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/quick-view.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/orders.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

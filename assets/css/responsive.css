@@ -1,0 +1,133 @@
+/* ==========================================================================
+   NESTORA — LUXURY BEDDING & SLEEP COMFORT
+   Responsive & Adaptive Media Queries
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Large Desktop & Above (>= 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  .hero-home {
+    min-height: 82vh;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Breakpoint (< 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+  .dropdown-menu-nestora.mega-menu {
+    width: 480px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dropdown-menu-nestora.mega-menu .dropdown-featured-col {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet & Mobile Navigation Breakpoint (< 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-inner {
+    height: 70px;
+  }
+
+  /* Sticky Purchase Bar for Mobile Product Details */
+  .sticky-mobile-purchase {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* Comparison Matrix Responsive Mobile Cards */
+  .compare-table-responsive {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-card-col {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Landscape & Tablet Portrait (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .brand-logo {
+    font-size: 1.55rem;
+  }
+
+  .section-spacing {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .cart-drawer {
+    width: 100vw;
+  }
+
+  .compare-bar {
+    width: 92vw;
+    flex-direction: column;
+    align-items: stretch;
+    bottom: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile Devices (< 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 479.98px) {
+  .nestora-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .finder-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card-body {
+    padding: 0.95rem;
+  }
+
+  .product-card-title {
+    font-size: 1.05rem;
+  }
+}
