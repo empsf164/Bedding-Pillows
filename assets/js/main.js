@@ -264,11 +264,94 @@
     if (window.NestoraWishlist) window.NestoraWishlist.updateWishlistUI();
   }
 
+  function initActiveNavLinks() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const cleanPath = currentPath.split('?')[0].split('#')[0] || 'index.html';
+
+    const desktopLinks = document.querySelectorAll('.nav-desktop-link');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    const updateLinks = (links) => {
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const linkPath = href.split('?')[0].split('#')[0];
+        
+        if (linkPath === cleanPath || (cleanPath === '' && linkPath === 'index.html')) {
+          link.classList.add('active');
+        } else if (!href.startsWith('#') && !link.classList.contains('has-sub')) {
+          // preserve active if explicitly on related subpage
+        }
+      });
+    };
+
+    updateLinks(desktopLinks);
+    updateLinks(mobileLinks);
+  }
+
+  function initBackToTop() {
+    let btn = document.getElementById('btn-back-to-top');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'btn-back-to-top';
+      btn.className = 'btn-back-to-top';
+      btn.setAttribute('type', 'button');
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.setAttribute('title', 'Back to top');
+      btn.innerHTML = '<i class="bi bi-chevron-up"></i>';
+      document.body.appendChild(btn);
+    }
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 250) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  function initPasswordToggles() {
+    document.querySelectorAll('.btn-password-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const container = btn.closest('.password-input-group') || btn.parentElement;
+        const input = container.querySelector('input');
+        const icon = btn.querySelector('i');
+        if (!input) return;
+
+        if (input.type === 'password') {
+          input.type = 'text';
+          if (icon) {
+            icon.className = 'bi bi-eye-slash';
+          }
+          btn.setAttribute('aria-label', 'Hide password');
+        } else {
+          input.type = 'password';
+          if (icon) {
+            icon.className = 'bi bi-eye';
+          }
+          btn.setAttribute('aria-label', 'Show password');
+        }
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initMobileMenu();
     initNewsletterForms();
     initFooterYear();
+    initActiveNavLinks();
+    initBackToTop();
+    initPasswordToggles();
     renderDynamicProductDetails();
   });
 })();

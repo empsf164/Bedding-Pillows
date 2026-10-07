@@ -116,6 +116,8 @@
 .nav-desktop-link:hover,
 .nav-desktop-link.active {
   color: var(--color-accent-sage);
+  background-color: var(--color-surface-hover);
+  font-weight: 600;
 }
 
 .nav-desktop-link i {
@@ -404,7 +406,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 0;
+  padding: 0.9rem 0.5rem;
   font-family: var(--font-ui);
   font-size: 0.98rem;
   font-weight: 500;
@@ -414,6 +416,18 @@
   border: none;
   text-align: left;
   cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--color-accent-sage);
+  font-weight: 700;
+  padding-left: 0.75rem;
+  background-color: var(--color-surface-hover);
+  border-left: 3px solid var(--color-accent-sage);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .mobile-nav-link.has-sub i {
@@ -1492,3 +1506,82 @@
   font-size: 0.82rem;
   color: var(--color-text-muted);
 }
+
+/* --------------------------------------------------------------------------
+   15. Back to Top Button
+   -------------------------------------------------------------------------- */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all var(--transition-base);
+}
+
+.btn-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-back-to-top:hover {
+  background-color: var(--color-accent-sage);
+  color: #FFFFFF;
+  border-color: var(--color-accent-sage);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --------------------------------------------------------------------------
+   16. Password Input with Eye Icon Toggle
+   -------------------------------------------------------------------------- */
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-group .form-control-nestora,
+.password-input-group input {
+  padding-right: 2.75rem !important;
+}
+
+.btn-password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+  z-index: 5;
+}
+
+.btn-password-toggle:hover {
+  color: var(--color-accent-sage);
+}
+

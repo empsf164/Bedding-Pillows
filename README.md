@@ -9,7 +9,7 @@ NESTORA is a luxury, production-quality responsive bedding, linen, and pillow di
 ## 🌟 Key Highlights & Architecture
 
 - **Streamlined Navigation & Visual Direction**:
-  - Direct menu links: **Home**, **Shop**, **Collections**, **Sleep Guide**, **About**, **Contact**.
+  - Direct menu links: **Home**, **About**, **Shop**, **Collections**, **Sleep Guide**, **Contact**.
   - Right action items: **Wishlist**, **Bedding Bag (Cart Drawer)**, and **Sign Up** CTA.
   - Relatable luxury SVG favicon in all `<head>` sections.
   - 4-column footer consistent across all pages with social channels (Instagram, Pinterest, Facebook, Twitter/X, YouTube).

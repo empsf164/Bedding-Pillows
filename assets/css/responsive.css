@@ -76,15 +76,76 @@
 
   /* CSS Grid Option Cards (e.g. Pillow Finder quiz) */
   .finder-options-grid {
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    justify-items: center;
+    gap: 1.25rem !important;
+    justify-items: stretch !important;
   }
 
-  .finder-options-grid > *:last-child:nth-child(odd) {
-    grid-column: 1 / -1 !important;
-    max-width: 380px !important;
+  .finder-options-grid > * {
+    grid-column: auto !important;
+    max-width: 100% !important;
     width: 100% !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
+  }
+
+  .finder-option-card {
+    height: 100% !important;
+    min-height: 175px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Sleep Guide & Quiz Cards Equal Size on Tab View */
+  #finder-matched-cards > div {
+    display: flex !important;
+  }
+
+  #finder-matched-cards .product-card {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #finder-matched-cards .product-card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
+
+  #finder-matched-cards .product-card-footer {
+    margin-top: auto !important;
+  }
+
+  /* Hero Section Buttons Equal Sizing on Tablet */
+  .hero-cta-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .hero-cta-buttons .btn-nestora {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Final CTA group before footer */
+  .final-cta-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
   }
 
   /* Product catalog sidebar layout adjustment on tablet */
@@ -214,6 +275,39 @@
   .step-card {
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* Hero Buttons equal full width on mobile */
+  .hero-cta-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .hero-cta-buttons .btn-nestora {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Before Footer Section Buttons No Overlap */
+  .final-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 0.75rem !important;
+  }
+
+  .final-cta-group .btn-nestora {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
   }
 }
 
