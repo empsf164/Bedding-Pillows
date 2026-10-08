@@ -22,9 +22,8 @@ const NESTORA_PRODUCTS = [
     description: "Crafted from 100% organic French flax, our CloudLinen™ Sheet Set offers unmatched breathability, a relaxed lived-in drape, and year-round thermal regulation. Pre-washed with natural pumice stones for immediate velvety softness.",
     images: [
       "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Warm Ivory", code: "#F6F2EA" },
@@ -59,9 +58,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Natural ventilated Talalay latex with phase-change cooling cover. Ideal for hot sleepers.",
     description: "Engineered with open-cell natural Talalay latex core and micro-ventilated channels that continuously circulate air. The removable Tencel™ cover features Japanese phase-change cooling yarn for refreshing coolness all night long.",
     images: [
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Crisp White", code: "#FFFFFF" },
@@ -95,8 +94,8 @@ const NESTORA_PRODUCTS = [
     description: "Recreate the crisp, cool comfort of a five-star boutique suite. Woven from 100% organic GOTS-certified long-staple combed cotton in a breathable one-over-one percale weave.",
     images: [
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Classic White", code: "#FFFFFF" },
@@ -130,8 +129,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "RDS-certified Hungarian white goose down outer with resilient feather core.",
     description: "The ultimate dual-chamber architecture: 800-fill-power hypoallergenic white goose down on the outer perimeter for sublime cloud softness, paired with an inner core of supportive feathers.",
     images: [
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Pure Snow", code: "#FFFFFF" }
@@ -163,8 +163,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Deep honeycomb waffle texture. Layered warmth with lightweight tactile drape.",
     description: "Stonewashed for an exceptionally dimensional texture, this heavyweight waffle quilt provides breathable warmth without weight. Ideal as a stand-alone top layer in summer or a cozy mid-layer in winter.",
     images: [
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1558882224-dda166733046?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Natural Sand", code: "#D8C8B0" },
@@ -198,8 +199,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Baffle-box construction with 750 fill power European down. Zero cold spots.",
     description: "Featuring a 3D baffle-box design that keeps the down evenly distributed without shifting or flattening. Encased in ultra-soft 400TC organic cotton sateen shell with 8 corner loops.",
     images: [
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Cloud White", code: "#FAFAF9" }
@@ -231,8 +233,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Shoulder contour cut-out aligns spine and relieves neck pressure for side sleepers.",
     description: "Specifically contoured to cradle the head and accommodate the shoulder slope. Features responsive memory foam infused with soothing herbal bamboo charcoal for natural odor resistance.",
     images: [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Oatmeal Grey", code: "#D5D1CB" },
@@ -265,8 +268,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Silky smooth closed-loop bamboo lyocell. Naturally hypoallergenic and cool.",
     description: "Made in a zero-waste closed-loop process from organically grown bamboo. Feels softer than 1000-thread-count Egyptian cotton with natural temperature-regulating micro-channels.",
     images: [
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Pale Sage", code: "#D2DDD0" },
@@ -300,8 +304,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Gentle on hair and delicate facial skin. Reduces morning bedhead and friction lines.",
     description: "A decadent blend of 6A grade Mulberry silk and Eucalyptus Tencel™. Features an invisible French envelope closure and delicate French seam detailing.",
     images: [
+      "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1000&q=80",
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Pearl Champagne", code: "#F4EFE6" },
@@ -335,8 +340,8 @@ const NESTORA_PRODUCTS = [
     shortDesc: "100% noiseless waterproof barrier. Breathable bamboo jacquard top.",
     description: "Engineered with a breathable micro-porous polyurethane membrane that blocks liquids, allergens, and dust mites while maintaining quiet airflow. Fits mattresses up to 18 inches deep.",
     images: [
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Crisp White", code: "#FFFFFF" }
@@ -368,8 +373,9 @@ const NESTORA_PRODUCTS = [
     shortDesc: "15 lbs of gentle deep-touch pressure. Open-loop knit prevents overheating.",
     description: "Crafted entirely by hand using layer upon layer of organic cotton yarn. Free of artificial glass beads or plastic pellets — the soothing weight comes entirely from pure natural fibers.",
     images: [
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558882224-dda166733046?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Linen Cream", code: "#F7F3EB" },
@@ -403,8 +409,8 @@ const NESTORA_PRODUCTS = [
     shortDesc: "Add or remove micro-fill to dial in your exact height and support level.",
     description: "No more guessing your pillow height. Unzip the inner casing and adjust the silken micro-gel clusters until your head, neck, and spine rest in effortless ergonomic harmony.",
     images: [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80"
     ],
     colors: [
       { name: "Snow White", code: "#FFFFFF" }
